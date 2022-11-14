@@ -1,0 +1,694 @@
+os-commandprompt--- parent proces
+|
+python   shell--- child process (R+)
+
+
+-------
+
+s1: understand topics/concepts
+s2: syntax about topic
+s3: refer existing egs.
+s4: exercise
+
+variable
+========
+
+placeholder or namepace--> holds value
+
+syntax:-
+
+variablename = value
+
+# variablename---> not starts with digit
+		--> not start with space or special char
+		--> start with A-Z or a-z
+
+error
+|----------syntax error  ---> not following python rules
+|---------- logical error ----> following python rules (NameError, KeyError, ValueError,TypeError)
+
+
+task:-
+----
+step1: create and initialize filesystem details(filesystem type; partition name; Partition size; mountpoint directory)
+
+step2: using print()- display filesystem details to monitor
+
+
+
+
+print(namedvar)
+
+120
+
+
+
+how to combine userdefined string and named var
+===============================================
+1. using comma
+
+print(userdefined text,namedvar)
+File size : 120
+
+filesystem type: xfs 			%s
+partition name: /dev/xvdb1 		 %s
+partition size: 120 			 %d
+mount point : /mnt 			 %s
+
+
+size= "120GB"   # str-- collection of char
+					|---A-Z a-z ,0-9,special char
+					|---> "" or ''
+
+2. control string %f  %s %d ===> C lang
+
+print("user defined string  %s  %d  %f "%(namedvariable))
+
+3. format() method
+
+syntax:-
+"user defined string {} and {}".format(namedvariables)
+
+
+
+
+function -- procedural programming eg) print(), type()
+
+method -- object oriented programming
+
+object.methodName()
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+task
+=====
+1. test whether python is installed or not.
+python -V
+
+python --version
+
+2. display message "Welcome to program " to monitor  ( hint :use print())
+
+3. Using single/double quotes, display your name and working place to screen
+
+4. How to use Single line and multiline commentin python
+
+5. write a program that creates a variable var, holding your name as its value.
+Display " Hello .. followed by your name"
+
+
+\n  - newline character  \t - tab 
+
+typecast
+=========
+|---> change data type--> current type to target type
+
+eg n=44
+
+print(type(n))---> <class int>
+
+convert to float
+========
+|---->float(current type) 
+
+
+convert to int
+|---> int(current type)
+
+
+convert to str
+|-----> str(current type)
+
+==============================
+
+expression
+=====
+operator and operands
+
+|----> infix   (python)  operand1 operator  operand2
+	eg)  			a + b
+|-----> prefix ++i (not supported)
+|-----> postfix i++    "
+
+
+operator
+------
+
+arithetic +, -, *, /, //, **
+
++---> number --> arithmetic opr  
+ |----> strings---> concatenation
+
+variable
+-int, float, str
+-using ,
+-using  %d %s %c
+- using{}
+-comment
+-operator
+|--> +, -, *, /, //, **
+|--> +, *
+
+
+Keyboard(<STDIN> )   --->	 python   ---> 		Monitor(<STDOUT>)
+                     input()            print()
+
+
+
+
+input()--> dynamic input from keyboard
+
+syntax:-
+
+variable	=input('prompt message')
+		|---STDOUT-----|
+|--STDIN--|
+
+input() always accepts value as str
+
+task
+====
+write a python program
+---
+step1 : read a partition name from <STDIN>
+	read a partition size from <STDIN>
+
+step2 : read another partition name from <STDIN>
+	read another partition size from <STDIN>
+
+step 3: calculate sum of partition size
+
+step 4: using multiline print()- display each partition name - Size
+				display total size
+
+o/p
+---
+Enter a partition : /dev/sda1
+Enter /dev/sda1 size : 150
+
+Enter a partition : /dev/sda2
+Enter /dev/sda1 size : 200
+
+partition:/dev/sda1		Size:150 GB
+partition:/dev/sda2		Size:200 GB
+--------------------------------------------
+
+				Total:350 GB
+--------------------------------------------
+
+
+
+
+int, float, str, bool
+
+type(0), type(-1), type(1236535)
+|--------------------------------------<class int>
+
+type(0.0), type(-16.7), type(123.6535)
+|--------------------------------------<class float>
+
+type(True) type(False)
+|------------------------------------<class bool>
+
+
+bool(-1)
+bool(122)
+bool(72.88)
+bool('data')
+---------------------------> True
+
+
+
+bool(0)
+bool(0.0)
+bool('')
+
+-------------------------> False
+
+
+Relational operators--> test condition
+========================
+
+== !=  <  >  <=  >= (int,float,str)----> result is bool(True/ False)
+
+10 == 20     (int)
+|  
+False (bool)
+
+-------------------------------------
+Task
+====
+1. write python program
+
+a. Create a variable fname & initialize your firstname as its value.
+
+b. Create another variable lname & initialize your lastname as its value.
+
+c.Using String concatenation operator, join fname with lname and display to the monitor.
+
+----------------------
+2. Explore
+
+no= 16
+
+item_cost = 50.22
+
+desciption =""
+
+Using type() function, determine datatype of above .
+
+---------------------------
+3. Write a python program
+
+a. Read a student name & 3 subjects marks from STDIN(keyboard)
+
+b. Calculate sum and average of 3 subjects
+
+c. Display all details( name, subject marks , total, average) to monitor.
+(using single print())
+==============================================
+
+
+
+conditional statements
+=====================
+
+bool--> True, False
+
+==  != > < >=  <=     a<b -->expression
+
+
+|--- code block-  execute only one time
+|--- testing/ validation
+|---- use if keyword
+
+
+|--- any expression  or method or function ---> return boolean value(True/False)--> conditional statement
+
+
+|---> 3 ways
+
+
+1) if only style
+=================
+
+Syntax:
+====
+
+if(condition):
+	codeblock -1
+	codeblock - 2
+	codeblock -3
+
+codeblock-4
+
+
+condition
+|---> True    codeblock-1, 2,3,4
+|---> False   codeblock4
+
+
+2) if..else style
+
+
+syntax:-
+----
+
+if(condition):
+	true block
+
+else:
+	false block
+
+task
+====
+1. read a shell name from <STDIN>
+
+2. test input shell name is bash shell.----> initialize a variable profile_filename as bashrc.
+				|
+		(not a bash)	|
+				initialize profile_filename as /etc/profile
+
+3. display shelll name and the profile_filename to monitor.
+
+==========================================
+
+if(True):
+	...
+	...
+	..
+	if(condition):
+		---
+		---
+	else:
+		if(True):
+			***
+		else:
+			***
+else:
+	....
+
+===================================
+task
+-----
+
+1. read a login name from <STDIN>  
+
+2. test login name is root user or not. ------ sorry you are not a root user
+		         |
+		     root|
+
+		3. read shellname from <STDIN>
+		4. test input is bash -------------------sorry input shell is not bash
+			|
+			| (bash)
+			display "working kernel is linux"
+
+
+3. if.. elif style
+
+syntax:- multicondition
+======
+
+if (condition1) :
+	true block1
+elif (condition2):
+	true block2
+elif (condition3):
+	true block3
+...
+else: 
+	false block
+--------------------------------------------------
+
+task
+====
+
+write a python program
+
+step 1: read a shellname fro <STDIN>
+
+step 2: test input shell is bash---- intialize profile filename - /etc/bashrc
+        test input shell is ksh ---- initialize profile filename - /etc/kshrc
+	test input shell is csh---- intialize profile filename - /etc/cshrc
+        test input shell is psh ---- initialize profile filename - C:\\win\\profile
+
+	| fails
+	|
+	initialize shellname as /bin/nologin    and profile filename as /etc/profile
+
+
+-----------------------------------------------------------------------------
+Relational opr ---- single test--- boolean value
+Logical operator ----multiple test(int, float,str) ---- boolean value
+
+and
+or
+not
+
+|----> Single conditional statement to test more than one condition
+
+
+loginname ="Login name"   -> (1)
+password ="dkjd"   -> (2)
+
+port > 5000  (1)
+
+port <6000  (2)
+
+eg)
+(port > 5000) and (port <6000)  
+boolean             boolean          
+ C1			C2		boolean
+
+logical and
+-----------
+Condition1	Condition2	Result
+True		True		True
+True		False		False
+False		True		False
+False		False		False
+
+(loginname =="Login name")  and (password =="dkjd")
+   boolean				boolean		===> boolean
+
+logical or
+----------
+
+condition 1	condition2	result
+True		True		True
+True		False		True
+False		True		True
+False		False		False
+
+
+sh == "ksh"  (1)
+
+sh == "bash"  (2)
+
+
+logical not
+-----
+
+opposite to test
+
+True----> False
+False---> True
+=========================================================================
+1.write a python program
+read a port no. from <STDIN>
+test port no 501-599  Valid/ Invalid
+
+--------------
+
+2.''' read  shell name . test bash or ksh.If any one of them matched, display valid message'''
+sname = input("Enter the Shell Name :"))
+
+if sname=="ksh" or sname=="bash":
+	print("Valid")
+else:
+	print("Invalid")
+---------
+=====================================================================
+
+
+Looping statement ---> execute more than one time
+
+|------------> Conditional based Looping - based on bool value - code block execute
+
+|------------> Collection Based Looping - based on data 				(str,bytes,list,tuple,dict,set,iterator)
+
+1.  Conditional based Looping 
+=============================
+
+
+rule 1: Initialization     					counter var
+rule 2: test the condition
+rule 3 arithmetic (increment/ decrement) 
+
+
+while
+-----
+Syntax:-
+
+initialization		i=0
+while(condition):	while(i<5):
+	code block		code block
+	arithmetic 		i=i+1
+
+
+i=0   0<5
+codeblock
+
+i=1  1<5
+codeblock
+i=2
+
+2<5
+codeblock
+.
+.
+i=4
+
+4<5
+codeblock
+i=5
+
+5<5======> False
+
+===========================================
+
+task
+====
+
+using while loop- max 3 times
+|-------------------> read a login name
+|--------------------> test login name is root or admin
+			|
+			|	anyone is matched
+			display "Success"
+
+initialization		i=0
+while(condition):	while(i<5):
+	code block		code block
+	arithmetic 		i=i+1
+
+
+break- skip he remaining iterations
+port=0
+
+not(port==0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
