@@ -1,0 +1,658 @@
+
+Collection style looping
+------------------------
+
+for loop
+
+syntax:-
+-----
+
+for variable in collection:
+	code block
+
+
+string
+-------
+|-------> collection of chars
+
+|------> index based
+
+
+s= "p	y	t	h	o	n"
+    0   1       2       3       4       5
+
+    -6	-5	-4        -3	-2	-1
+
+access a character from string
+
+s[index]
+
+for variable in s:
+	print(variable)
+
+--------------------------
+i=0
+while i<5:
+	print("Hello")
+	
+
+
+break---> keyword to exit from loop
+
+continue--> keyword skips remaining iteration and continues with next iteration.
+
+
+s="python" 0..5
+stringname[index]--->Value/ IndexError
+
+print(s[8])---> IndexError
+
+print(s[2])---> 't' 
+
+String are immutable- collection of chars - index based
+
+python support string slicing--> substring
+
+Sntax:-
+
+Stringname[n:m]
+	   |-------- fron nth index to m-1 index
+
+
+1. info about te str topic
+C:\> python -m pydoc str {enter}
+
+
+2. info about json
+
+C:\>python -m pydoc json {enter}
+
+
+-------------------------------------------
+
+2. help() function
+
+open python shell
+
+>>> help(type)  or help(module)  {enter}
+
+
+=========================================================
+int, float,str, bool,NoneType--->  None   Scalar datatypes  (single)
+
+
+list, tuple, dict, set ------- collection of elements
+
+
+List
+=====
+
+collection of ordered elements  - index based
+
+			|---- different types of element
+
+list is mutable
+
+[] denotation
+
+type([])---> List
+
+
+Syntax:-
+
+listname = [list of elements separated by comma]
+
+l=[12,"rrr",34.55,True]
+
+    |
+    0   1    2     3
+   -4   -3   -2    -1
+
+To fetch single item from list
+
+l[-1] == l[3]   ---> True
+
+========================
+  0     1    2     3
+l=[12,"rrr",34.55,True]
+            |
+ 
+l[2]="new"
+
+=====================
+
+task
+====
+
+write a python program
+
+1. create an empty list
+
+2. display size of list
+
+3. use while loop- max 5 times
+             - read hostname from <STDIN>
+             - append hostname to existing list
+
+4.  use for loop to display list of hostname oe by one
+
+5. display size of list
+
+===================================
+l=[]
+print(len(l))
+i=0
+while i<5:
+	host= input("Enter the hostname")
+	l.append(host)
+	i=i+1
+
+for var in l:
+	print(var)
+
+print(len(l))
+
+
+====================================================
+
+v="101,sales,Raj,Pune,1008090"
+
+"sales" not in v   --> false
+
+l=["Sales","HR","Prod"]
+
+"Prod" in l 
+
+==================================
+task
+====
+
+Given list:   DB= ['oracle', 'mysql', 'plsql', 'mongo']
+
+1. create a file name p2.py
+2. read a db name from <STDIN>
+3. test whether db name is in list or not
+4. if exists in list, use index() display index number
+5. if not available in existing list, add input db name to list.
+6. display list of db name one by one
+
+
+
+DB= ['oracle', 'mysql', 'plsql', 'mongo']
+
+v= input("Enter the db name")
+
+if v in DB:
+	print("DB: {} is available in index : {} ".format(v,DB.index(v)))
+else:
+	print("DB: {} is not available. Lets append to List ".format(v))
+	DB.append(v)
+
+print("List of DBs")
+
+for var in DB:
+	print(var)
+
+============================================================================
+
+python supports multiple initialization
+
+variable = value
+
+variable1, variable2, variable3... variableN = value1, value2, value3... ValueN
+
+=========
+convert str to list
+syntax:-
+======
+s.split(separator)
+
+s= "101,raj,Pune" #str
+
+s.split(",")--> list
+		["101",  "raj",  "Pune"] 
+
+joining str to single str
+----------------------
+
+"".join(list)====>outString
+
+==================================================
+
+
+In python, else with while/ for
+
+while condition
+	...
+else:
+	code will execute once // at end of loop
+
+
+================
+while(c>3):
+	read user input
+	c=c+1
+	if test--->
+        else---> sorry try again
+        
+else:
+	"Thanks for your visit" 
+
+============================================================================
+task 
+===
+1. create a python program
+
+s="1323232sdfkjkd"
+calculate the sum of digit
+(Note:- for loop and isdigit())
+
+i=0
+for v in s:
+	if v.isdigit():
+		i=i+int(v)
+else:
+	print(i)
+
+2. s="hello"
+filter the vowels and count no.of vowels
+c=0
+for v in s:
+	if v="a" or v="e" or v="i" or v="o" or v="u":
+		c= c+1
+else:
+	print("Total no. of vowels in {} is {}".format(s,c))
+
+3. s1= "bin:usr:daemon:/bin/bash:x:false"
+ count the no. of ":" in string
+
+n=s.count(":")
+print("The total no. of : is ",n)
+
+4. s3="This is sample data\n"
+ remove "\n" from the string
+
+s.strip()
+
+5.
+predict the output
+
+n=str(5) + str(int(7.0)) + '6'       '5' + '7' + '6'  ===>'576'
+if n.isdigit():					// True
+	r= int(n) +100		// 676
+else:
+	r= int(n) +500			
+print(r)
+=============================================================================
+
+list- mutable- []- ordered - index based 
+tuple
+=====
+- collection of elements
+		|-----------------diffrent type
+		|----- index based
+
+		|- ()
+
+t=()
+type(t)---> tuple
+type(())---> tuple
+
+immutable
+
+syntax:-
+tuplename = (collection of items)
+
+t=(d1,d2,...dn)====> cant add/ delete/ modify
+
+    |
+fixed record
+
+====================
+
+list===> tuple
+
+tuple(L)===> cant be modified
+
+list(T)====> list which can be modified
+
+
+range()---> 
+
+
+del()---> 
+=================================
+task
+====
+
+1.write a python program
+Using List
+a. create 5 different os names
+
+b. display 0th index and 1st index
+
+c. Modify 1 st index value
+
+d. display 1st index value
+
+e. display all details
+------------------------------------------------------
+2. write a python program
+Using Tuple
+a. create 5 different server names
+
+b. display 0th index and 1st index 
+
+c. Modify 1 st index value   # read error message
+
+d.  display all details
+----------------------------------------------------------
+3. Given List l= ["raju,Sales,Pune,19808", "Ravi,Prod,Bangalore,97907", "Arun,HR,Pune,33232"]
+	display emp name, working place and sum of emp's salary.
+-------------------------------------------------------------------------------------------------
+4. Given Tuple conf_files=("/etc/passwd", "etc/pamd", "/etc/hosts")
+	a. display total no. of files
+	b. display 1st and last value
+	c. add "/etc/sysconfig" and "/etc/hostname" to existing tuple . read error message
+	d. delete the tuple
+=================================================================================================================
+
+List of List
+
+L= [[],[],[],[]]
+    -   -  -  -  unnamed List  
+   ------------- 
+   |
+   L
+
+L[0]
+
+
+List of Tuple 
+
+L= [(), (), (), ()]
+
+
+Tuple of List
+
+T= ([], [], [], [])===>immutable
+
+
+tuple of Tuple
+
+T=( (), (), () )
+
+total=0
+l= ["raju,Sales,Pune,19808", "Ravi,Prod,Bangalore,97907", "Arun,HR,Pune,33232"]
+for v in l:
+	name,dept,place,salary = v.split(",")
+	print("Emp name :{} \t Emp working Place :{}".format(name,place))
+	total=total+int(salary)
+
+
+print("*" *50)
+
+print("\t Total :{}".format(total))
+
+print("*" *50)
+========================================================================
+
+File Handling
+==============
+
+str,list
+
+Keyboard<STDIN>---------python----------------Monitor<STDOUT>
+               input()  ------       print()
+
+			|
+			Storage(FILE)
+
+
+1. Read a data from FILE  --------- python ---------- display to monitor
+
+2. python------------- create a new FILE and write data to FILE
+
+3. Read data  from <One FILE> -----python-----create a new FILE and write data to new FILE
+
+
+
+
+user: python  open("filename","mode") 0x1234
+------------------
+kernel         |     [D1,D2,D3...DN] 0x1234
+-------------------
+Hardware -     .......| 
+Harkdisk
+
+in winx
+=====
+path:  C:\\user\\dir\\filename
+
+in linux
+=======
+path: /homeuserA/dir/filename
+
+mode====================> "r", "w", "a"
+
+1. Read a data from FILE  --------- python ---------- display to monitor
+ -------------------------------
+
+                                                "r"
+ open an existing FILE  ---> fobj=open("filenmae", "mode")  
+   |
+ read a content          fobj.read()   --> 'line1\nline2\nline3....lineN\n'                                        			
+                               (or)
+			fobj.readlines() --->['line1\n','line2\n','line3\n'.,..'lineN\n']
+		
+
+    |
+close a file			fobj.close()
+=================================================================================
+task
+====
+
+write a python program
+=====
+1. read a emp.csv -line by line
+
+2. use membership operator to search sales pattern from file content
+
+3. display emp name and working city in title case (str.title())
+
+4. calculate sum of cost
+
+5. display sum of sales dept emp cost
+
+
+===========================
+2. python------------- create a new FILE and write data to FILE
+
+
+
+create a file ---  wobj= open("resultfile","w")
+
+write data----- wobj.write("Singlestring\n")
+
+close a file----- wobj.close()
+
+------------------------------------------
+3. Read data  from <One FILE> -----python-----create a new FILE and write data to new FILE
+
+---------------------------				------------------------------
+|
+|
+|
+fobj= open("inputfile","r")
+str_file_content=fobj.read()
+fobj.close()
+							|
+
+							wobj = open("Resultfile","w")
+							wobj.write(str_file_content+"\n")
+							wobj.close()
+													
+like cp inputfile resultfile
+
+===================================================
+
+block style 
+
+-------
+
+as keyword
+
+without as keyword
+==================
+fobj= open("inputfile","r")
+str_file_content=fobj.read()
+fobj.close()
+
+
+with as keyword
+===============
+with open("inputfile","r") as fobj:
+	L= fobj.readlines()
+	for v in L:
+		print(v.strip())
+
+
+#fobj.close() is not neccessary 
+
+
+
+with open("resultfile","w") as WH:
+	WH.write("Data1\n")
+	WH.write("Data2\n")
+	
+====================================
+
+
+enter a pin : 1234
+
+success pin is matched---> file
+
+
+enter a pin :313211
+
+Wrong pin. 313211------> file
+
+=================================================================================
+
+dictionary
+========
+
+dict = {}
+
+type({})---><class dict>
+
+---> collection of unordered elements
+
+dict= { key1:value1 ,key2:value2,....keyN:valueN}
+	----------  ------------
+	item1		item2
+dict[key1]
+keys---> str
+    ---> unique
+
+
+list/tuple			dict
+-------------------------------------------
+ordered				unordered
+index based access		keybased access
+duplicate values 		duplicate only in value not key.
+					key is unique
+are allowed
+
+
+l=['a','b']			d={'a':'Arun", "b":"Banu"}
+l[1]----> 'b'			d['a']----> "Arun"
+
+l[3]--->indexError		d['h']----> KeyError
+
+
+list-mutable
+tuple-immutable			mutable
+
+d={1:"aaa", 2:"bbb", 3:"ccc"} // valid
+
+d={1:"aaa", 2:"bbb", 3:"ccc", 1:"ddd"} // Error duplicate key
+
+d={1:"aaa", 2:"bbb", 3:"aaa"} // Valid
+
+len(d)--> 3
+
+how to fetch value from dic
+-----------------------------
+d[key]---> value/KeyError
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
