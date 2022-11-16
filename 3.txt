@@ -1,0 +1,596 @@
+dict
+|---> unordered
+|-- keybased
+|---> keys unique
+
+
+d={1:"raj",2:"Theeba"} // valid
+d[2]=""raj"
+del[d[1]]
+
+d={():"raj",(1,2):"jjj"} // valid
+
+d={[]:"f"} // invalid
+
+key|value
+
+len(d)
+
+syntax:-
+
+d={"key1":"value", "key2":"value2",..."keyn":"valuen"}
+
+emp={} // empty dict 
+
+
+To add element to a dic
+============
+
+dictname["Newkey"]="newValue"
+
+emp["101"]="Arun,Sales"
+
+To modify an already existing value
+==================================
+
+syntax:-
+
+dictname["Existingkey"]= "NewValue"
+
+
+To fetch/ get a single value from dic
+============================
+
+dictname["Existingkey"]=======> Value/ KeyError
+
+
+emp["333"]----> keyerror
+
+
+To fetch all values of a dict
+=============================
+
+for var in d:
+	print(var)
+
+============================
+dict supports membership oerator
+
+in 
+not in
+
+"inputkey" in dict---> True/False
+
+if "k1" in d:
+	print("yes key :k1 exists. value is {}".format(d["k1"]))
+else:
+	print("Sorry key not present")
+
+
+dict methods
+======
+
+d={"k1":"d1", "k2":"d2", "k3":"d3"}
+
+fetch single value
+==============
+d["k1"]----> "v1"	(or)	d.get("k1")---> "v1"
+
+d["k99"]---> KeyError   (or)    d.get("k333")----> None
+
+
+add new value
+=======
+
+d["newKey"]="newvalue"    (or)  d.setdefault("newkey","newValue")
+
+d["k222"]="v222"     (or)  d.setdefault("k222","v222")
+
+modifying existing value
+=====================
+d["existingKey"]="newValue"    (or)  d.setdefault("key","newvalue")
+					            |
+						   new	
+-----------------
+remove
+=====
+
+del(d["existing key"])----> None
+
+
+dictname.pop("existingkey")---------------> value removed
+
+
+for v in d:
+	print(v)# list of keys
+
+d.keys() # list of keys
+
+Task
+====
+
+write a python pgm
+
+
+a. create an empty dict
+
+b. using for loop - 5 max
+		-  read a network property name (ex. interface)
+		-  read its value (ex. eth0)
+		-  add input data( key,value) to dict
+c. display key/value format
+
+d. read property name from STDIN
+
+e. test input propertyname is existing or not-------- add property details to dict
+				|
+
+				f. display property details
+  
+===========================================================================================
+
+recap
+====
+
+list - ordered items- index based - mutable- allows duplicates
+ex. l=[1,2,3,1,2,3]
+
+tuple- ordered items- index based - immutable- allows duplicates
+ex: t=(1,2,3,1,2)
+
+dict- unordered items -key based- mutable- allows duplicates on value
+d={"k1":"v1","k2":"v2","k3":"v1"}
+
+set- collection of unordered items- does not duplicates
+                  ---------------
+			|
+		Not index based 
+		Not key:Value based
+		key based-----------------> no modification
+
+syntax:-
+
+setname={list of items}
+
+s1={"l1","l2","l3","l4",40,20}==> set of items
+
+
+setname={"k1","k2","k3"}		vs  dictname ={"k1":"v1", "k2":"v2"}
+
+
+To add new item to set
+=====================
+
+-----set.add(scalarvalue)  s.add(50)   s.add(763.33)   s.add("ffkjfk")
+-----set.update(collection)  s.update(list)  s.update(tuple)...te(
+
+
+delete existing item
+=============
+
+setname.remove(item)  (or)  setname.discard(item)
+======================================================================
+
+1D
+===
+
+L= ["d1","d2","d3"]
+
+T= ("Dx","Dy")
+
+d={"k1":"v1", "k2":"v2"}
+
+emp={'eid':100,'ename':"Theeba",'edept':"Sales"}
+
+------------------------------------------------
+
+1 to many
+	---
+	|----list, tuple,dict
+
+dict of list/tuple/dict
+
+
+d= {"k1":[], "k2":(), "k3":{}}
+
+emp= {"eid":[], "ename":[], "edept":[]}  # dict of list
+
+type(emp)---> dict
+
+type(emp["eid"])---> list
+
+
+
+{'eid': [101, 102], 'ename': ['Ajay', 'Sai'], 'edept': ['Sales', 'HR']}
+  ---     0    1     -----     0       1       ----       0       1
+
+emp["eid"][0]-----> 101
+
+emp["ename"][0]-----> "Ajay"
+
+emp["edept"][0]-----> "Sales"
+
+
+
+emp["eid"][1]-----> 102
+
+emp["ename"][1]-----> "Sai"
+
+emp["edept"][1]-----> "HR"
+
+====================================================
+
+import pprint
+
+pprint.pprint(L)
+====================================
+
+dict of List
+
+net ={ "interface":['eth0','eth1','lo'], "boot": ['yes','no']   }
+
+
+========================================
+
+task
+===
+property.txt
+===========
+onboot=None
+interface=eth0
+bootproto=dhcp
+defroute=yes
+
+step1: create a empty dict {'onboot':'None'}   --> f1()
+
+step2: read network property file line by line
+
+step3: split each line based on (=) into multiple values   L= ["onboo","none"]----> d[L[0]]=L[1]
+
+step4: add splitted data as (key,value)
+
+step5: using pprint display k,v details
+
+
+step6:- dict operation
+
+
+		- modify onboot-> Yes
+		- modify bootproto-> static
+		- add IPAddress -> 10.20.30.40
+		- add DNS1-< 122.222.343.111
+
+step7: using pprint -display dict details
+
+step8: create a new property file and write updated dict (k=v)
+
+
+==========================================================================
+
+
+
+function
+======
+avoid repitation code
+
+code reusauable
+
+
+--- simple function call
+--- call with arguments
+
+--- arg types
+--- scope of function member
+--- global vs return
+
+
+function
+------------
+
+|------------ function definition   ---- code block
+
+|------------  function call   ---- to invoke the fn defn
+
+
+function defn Syntax:-
+====================
+
+def functionName():
+	code block
+
+	...
+	...
+
+How to invoke a fn defn ?
+
+
+functionName()   # simple function call
+
+
+=============================
+
+task
+====
+
+property.txt
+===========
+onboot=None
+interface=eth0
+bootproto=dhcp
+defroute=yes
+
+step1: create a empty dict {'onboot':'None'}   --> f1()
+
+step2: read network property file line by line	----------------------------------------------------
+												   |
+step3: split each line based on (=) into multiple values   L= ["onboo","none"]----> d[L[0]]=L[1]   |--- f2()
+												   |
+step4: add splitted data as (key,value) ---------------------------------------------------------   
+
+step5: using pprint display k,v details -----> f3()
+
+
+step6:- dict operation -------- f4()
+
+
+		- modify onboot-> Yes
+		- modify bootproto-> static
+		- add IPAddress -> 10.20.30.40
+		- add DNS1-< 122.222.343.111
+
+step7: using pprint -display dict details-----> f3 function call
+
+step8: create a new property file and write updated dict (k=v) ------> f5()
+
+
+
+return keyword
+
+===========================================================================
+task
+====
+
+1.
+action_model={
+		'request' :{
+			'operation' : 'DeleteTags',
+			'params' : [ {
+					'target': 'Resources[0],
+					'source': 'Identifier',
+					'name':'ID'
+				    }]	
+			   }
+              }
+
+a. Determine the given structure type  dict of dict- nested structure is list of dict
+
+b. How to display 'name' value  print(action_model['request']['params'][0]['name'])====> ID
+======================================
+2. 
+Identify the errors
+
+a. car={"brand" :			# commas are missing
+	"Ford" "model":
+	 "Mustang"
+	  "year": 1933
+	}
+	-----------------------------------car={"brand" :"Ford",  "model": "Mustang",   "year": 1933	}
+
+
+b. >>>fs={"fstype": "ext3", "proto":"tcp/ip", "port":22}
+   >>>fs['ext3']      # value is used
+
+=======================================================
+3. Given
+    Proc= {'pid':12, 'fs': '/proc', 'user':'root', 'sh':'/bin/bash' }
+use pop()----> delete fs and sh key items
+
+using del()- delete 'pid' and 'user' entries
+Whats the difference between pop() and del()
+
+
+
+
+def f(a):	Vs	def f(*a):		Vs def f(**a):
+
+      |				|			|
+required arg		variable length 	Keyword Arg
+
+
+=====================================================================================================
+
+Module
+=======
+----> existing python code
+
+----> reusauability ( code reuse)
+
+
+
+D:\\>ab.py
+=====
+
+port=9000
+d={'service':'sshd','file':'/ur/lib/systemd/sshd.service'}
+def f():
+	print("display message")
+	
+=====================================
+|---------------------------------------------loadable file or runnable  file
+
+
+D:\\>f1.py
+=====
+
+import ab
+if ab.port> 4000....
+print(ab.d['service'])
+
+
+
+D:\\>f2.py
+=====
+
+import ab
+print(port)
+ab.f()
+
+D:\\D1\\>f2.py
+=====
+# Module Not Found Error
+import ab
+print(port)
+ab.f()
+
+===================================
+
+import sys
+sys.path----> add module
+
+
+import filename
+	|
+	|
+	python first refers sys.path var----> list
+		|
+		found
+		|
+		python filename.py  - source file - ASCII format
+			|
+			filename.pyc - Bytecode-----> PVM
+
+
+			__pycache__/filename.pyc
+	
+
+============================================
+import os
+
+os.system("ps")
+
+
+
+import sys
+
+sys.version - str
+
+sys.path - list
+
+sys.modules - dict
+
+sys.argv - list
+
+help(sys)
+
+python -m pydoc sys
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
