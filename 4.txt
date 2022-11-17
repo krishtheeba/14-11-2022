@@ -1,0 +1,655 @@
+
+
+Recap
+
+var, types-> str,int,float,typecast,arithmetic,conditional statement,looping stmt,logical,
+list,tuple,dict{}, set, file handling, function defn,call,argsdef f1(a1,a2=0,*a3,**a4)---> f1(11,10,v=12,x=33)
+return,global,module- python file- import import sys- sys.path
+
+
+package
+=======
+
+import 50 py files
+
+D:\
+|---------project\
+		|-------- p1.py p2.py....  p50.py
+
+D:\> python {enter}
+
+import p1
+import p2
+
+
+(or)
+
+import p1,p2,p3
+
+package---> collection of modules
+module----> python file
+
+
+package---> directory structure
+
+step1:- folder/directory
+
+step 2: collect list of python files into directory.
+
+step3: create a special file __init__.py
+
+step4: test package  < import directoryName   >
+
+__init__.py
+===========
+
+Syntax:
+
+from <module> import <data member>
+
+
+ERP
+|------sales.py
+|-------prod.py
+|-------fi.py
+|-------CRM
+	|-----customer.py---> fx()
+
+__init__.py
+========
+from ERP.CRM.customer import *
+
+
+import ERP
+
+ERP.fx()
+
+====================================================
+
+procedural design-----> 
+
+Functional design pattern- machnine learning			vs function()--(behavior)--> set of stmt/cmd
+
+Object oriented design
+
+
+========================================================
+
+
+Functional style of python
+==========================
+
+
+
+lambda- used in functional programming
+      -  is nothing but an anonymous function/  unnamed function
+
+
+def fnName(arg):
+	....logic
+
+
+	- function without def keyword
+	- logic with arg and return value
+
+Syntax:
+------
+lambda <list of args> : expression
+
+			(or)
+
+			NamedfunctionCall()
+=======================================================================
+
+
+more than one line of definition lambda is not advisable
+
+--------------------->
+
+List Comprehension----> is list append
+----------------
+
+- create an empty list
+- append data to list
+- display the list
+
+
+
+>>> L=[]
+>>> for v in range(5):
+	r= v+100
+	L.append(r)
+
+	
+>>> L
+[100, 101, 102, 103, 104]
+>>> # List comprehension style
+>>> # syntax:-
+>>> #     [ Final_Variable for variable in collection]
+>>> [v+100 for v in range(5)] # List append
+[100, 101, 102, 103, 104]
+>>> # block style code
+>>> L=[]
+>>> for v in range(5):
+	if v>10:
+		r= v+100
+		L.append(r)
+	else:
+		r= v+500
+		L.append(r)
+
+		
+>>> L
+[500, 501, 502, 503, 504]
+>>> 
+
+
+# syntax:-
+>>> #     [  v+100 if v>10 else v+500  for v in range(10)] # conditional style list comprehension
+ 
+
+
+
+
+# lambda and comprehension-----> higher order function---> function (another_function)
+>>> # map--> map(function, collection)    ----> operation to be done all elements of list
+>>> # filter--> filter(function,collection)
+>>> # reduce ---> reduce(function,collection)
+>>> # map---> <address- iterator>
+>>> #filter---> <address- iterator>
+>>> # reduce---> <single Value>
+>>> 
+
+>>> L=[]
+>>> def fx(a):
+	r= a+100
+	return r
+
+>>> for v in [10,20,30,40,50]:
+	rv=fx(v)
+	L.append(rv)
+
+	
+>>> L
+[110, 120, 130, 140, 150]
+>>> #map(function,collection)- syntax
+>>> map(lambda a:a+100,[10,20,30,40,50])
+<map object at 0x008EBF10>
+>>> # type cast to list
+>>> list(map(lambda a:a+100,[10,20,30,40,50]))
+[110, 120, 130, 140, 150]
+>>> # map- avoids for loop
+
+
+map  				  		|  		 filter
+
+operation all elements						used to create a list of true values based on condition
+and returns all list  entries
+
+
+>>> list(map(lambda a:a>10,[5,6,7,8,9]))
+[False, False, False, False, False]
+>>> list(filter(lambda a:a>10,[5,6,7,8,9]))
+[]
+>>> list(filter(lambda a:a>10,[5,6,7,8,9,10,11,12,13]))
+[11, 12, 13]
+>>> list(filter(lambda a: "sales" in a, ['raj,sales', 'theeba,prod', 'Arun,Hr']))
+['raj,sales']
+>>> # filter does support arithmetic operation. supports exp returns boolean value
+
+
+=====================
+101,arun,sales,pune,12000
+222,Vishnu,Prod,Bangalore,30000
+422,Raghav,HR,Bangalore,30000
+601,ashwin,sales,pune,12000
+822,Vimal,Prod,Bangalore,30000
+412,Raju,HR,Bangalore,30000
+
+>>> # block style
+>>> t=0
+>>> fobj= open("F:\\PY_PROGRAMS\\emp.csv")
+>>> for v in fobj.readlines():
+	if 'sales' in v:
+		eid,evalue,edept,ecity,ecost = v.split(",")
+		t=t+int(ecost)
+
+		
+>>> print("Sum of Sales emp's cost",t)
+Sum of Sales emp's cost 24000
+>>> # read a .csv file
+>>> # search sales dept
+>>> # calculate sum of cost of sales emps
+>>> # display sum of sales emp cost
+
+map(lambda a:a, open("F:\\PY_PROGRAMS\\emp.csv").readlines())  # read .csv file   ---> A
+
+
+filter( lambda a: 'sales' in a ,A) # search for sales dept----> B[ 
+
+
+map(lambda a: a.split(",")[-1], B) # split each line into multiple values-----> C
+
+reduce(lambda a,b: int(a)+ int(b),  C)----------------------D
+
+
+display D
+
+
+
+functools.reduce(lambda a,b: int(a)+ int(b),list(map(lambda a:a.split(",")[-1],list(filter(lambda a: "sales" in a, list(map(lambda a:a, open("F:\\PY_PROGRAMS\\emp.csv").readlines())))) )))
+
+
+t=0  10		20		30		40		50
+ 0 +10
+    10-----------20
+         |
+	30
+         -------------------------|      iterations
+                 
+		60
+		-----------------------------------|
+				100
+				|---------------------------------|
+					150
+	
+
+
+
+functools.reduce(lambda a,b: int(a)+ int(b),list(map(lambda a:a.split(",")[-1],list(filter(lambda a: "sales" in a, list(map(lambda a:a, open("F:\\PY_PROGRAMS\\emp.csv").readlines())))) )))
+
+
+
+=======================================
+
+
+Task
+====
+
+1.Write a lambda fn takes x as parameter and returns x+2. then assign to variable L.
+
+	L=lambda x:x+2
+2.Write a lambda fn takes z as parameter and returns z*11. then assign to variable L.
+
+	L=lambda z:z*11
+
+3.Find all the numbers from 1-1000 divisible by 8
+
+      L=[ n for n in nos if n%8==0]
+	
+	
+4. Remove all vowels from string
+
+     s=	"".join([c for c in s if c not in ["a","e","i","o","u"]])
+
+5. Find all word in string that are less than 5 letters
+
+	words= s.split(" ")
+	
+	L= [word for word in words if len(word)<5]      
+
+======================================================================================================
+
+Exception handling in python
+============================
+
+Error
+|-----> SyntaxError--- didnt follow the python rules.
+
+|----> NameError, ValueError, IndexError, KeyError--- logic
+
+
+p1.py
+====
+...
+....SyntaxError
+...
+
+.sh
+===
+...
+..
+...Error
+...
+...
+...
+Exception handling
+================
+
+Syntax:-
+
+try:
+	operation
+	....
+	....
+
+except Exception:
+	Handle the Exception
+
+
+Exception--> NameError, IndexError
+
+
+==================================================================
+
+try:
+	operation
+
+except Exception:
+
+	handle_the_exception
+
+else:
+
+	#follows code where there is no exception
+===========================================================
+
+try:
+
+	operation
+
+except Exception:
+	handle_Exception
+
+else:
+	No Exception code
+
+finally:
+	code at last
+=============================================================
+
+
+raise---> create an exception
+
+eg)
+raise KeyboardInterrupt
+
+raise MemoryError("This is argument)
+      ----------  -----------------
+         |		|
+        class		Constructor
+
+===========================================================
+try:
+	operation
+
+except Exception1:
+
+	Handle exception	
+
+except Exception2:
+
+	Handle exception	
+except Exception3:
+
+	Handle exception	
+except Exception4:
+
+	Handle exception	
+
+
+
+
+
+
+
+>>> try:
+	var # exception- NameError
+except NameError:
+	print("Invalid Variable")
+
+	
+Invalid Variable
+>>> try:
+	print 1/0
+	
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(1/0)?
+>>> try:
+	print(1/0)
+except ZeroDivisionError:
+	print("You cant Divide By Zero")
+
+	
+You cant Divide By Zero
+>>> try:
+	print("No Exception")
+except Exception:
+	print("Iminside Exception")
+
+	
+No Exception
+>>> try:
+	print(1/0)
+except Exception:
+	print("You cant Divide By Zero")
+
+	
+You cant Divide By Zero
+>>> try:
+	print("Start of Try")
+	print(1/0)
+	print("end of Try")
+except Exception:
+	print("Iminside Exception")
+
+	
+Start of Try
+Iminside Exception
+>>> try:
+	var=10
+except NameError:
+	print("NameError occured")
+else:
+	print("No Exception code")
+	print("var is {}".format(var))
+
+	
+No Exception code
+var is 10
+>>> # try->else   No exception case
+>>> try:
+	var=10
+	print(1/0)
+except NameError:
+	print("NameError occured")
+else:
+	print("No Exception code")
+	print("var is {}".format(var))
+
+	
+Traceback (most recent call last):
+  File "<pyshell#174>", line 3, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+>>> try:
+	var=10
+	print(1/0)
+except ZeroDivisionError:
+	print("ZeroDivision Error occured")
+else:
+	print("No Exception code")
+	print("var is {}".format(var))
+
+	
+ZeroDivision Error occured
+>>> #try->except   case with Exception
+>>> try:
+	var=10
+	print(1/0)
+except NameError:
+	print("NameError occured")
+else:
+	print("No Exception code")
+	print("var is {}".format(var))
+
+	
+Traceback (most recent call last):
+  File "<pyshell#179>", line 3, in <module>
+    print(1/0)
+ZeroDivisionError: division by zero
+>>> try:
+	fobj=open("F:\\PY_PROGRAMS\\emp1.csv")
+
+except IOError:
+	print("Invalid file")
+else:
+	print("Read Operation")
+	for v in fobj.read():
+		print(v)
+	fobj.close()
+finally:
+	print("---Thankyou---")
+
+	
+Invalid file
+---Thankyou---
+>>> # Error:  try--> except-- finally
+>>> try:
+	fobj=open("F:\\PY_PROGRAMS\\emp.csv")
+
+except IOError:
+	print("Invalid file")
+else:
+	print("Read Operation")
+	for v in fobj.read():
+		print(v)
+	fobj.close()
+finally:
+	print("---Thankyou---")
+
+
+>>> #Without Error: try---> else--->finally
+>>> try:
+	a= int(input("Enter a positive number:"))
+	if a<=0:
+		raise ValueError("This is not a positive number")
+except ValueError:
+	print("Inside Except")
+
+	
+Enter a positive number:2
+>>> try:
+	a= int(input("Enter a positive number:"))
+	if a<=0:
+		raise ValueError("This is not a positive number")
+except ValueError:
+	print("Inside Except")
+
+	
+Enter a positive number:-1
+Inside Except
+>>> try:
+	a= int(input("Enter a positive number:"))
+	if a<=0:
+		raise ValueError("This is not a positive number")
+except ValueError as v:
+	print("Inside Except",v)
+
+	
+Enter a positive number:-2
+Inside Except This is not a positive number
+>>> try:
+	open("ttt.log")
+except NameError:
+	print("Invalid variable")
+except IndexError:
+	print("Index not available")
+except IOError:
+	print("File Not Exist")
+except ZeroDivisionError:
+	print("Divide by Zero")
+
+	
+File Not Exist
+
+
+
+===========================================================================
+
+
+Procedural style of python
+
+Functional style
+
+Object Oriented Style
+
+Python 3.x documentation
+
+help(str)
+
+
+class classname:
+
+	members of class--> var,methods
+     
+
+
+class str:
+
+	def format(){..}
+
+
+
+object--> handler used to access class members
+
+class- blueprint of object/instance
+
+syntax:- to access class attribite
+classname.attribute
+
+object- actual data---memory
+
+
+syntax:- objectname = classname()-----------------> special method 
+
+				constructor--> initialize object
+                         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
