@@ -1,0 +1,245 @@
+
+recap
+====
+
+object oriented programming
+==========================
+
+# class- 
+
+class <classnamme>:
+	attributes
+# classname.attribute
+
+# object- 
+# method
+
+
+#Workbook
+# wb1 wb2  wb3.... wbn===> real enties
+
+# int - type - class
+
+python 2.x===> type(10)===> <type 'int'>
+python 3.x ===> type(10)===> <class 'int'>
+
+# -1 0 1 2 3-------> real enties
+
+other programming
+=================
+int a=10;   a|10|0x10988
+
+int b=10;   b|10|0x3778
+
+int c=10;   c|10|0x76276
+
+
+python
+=====
+a=10				| 10  0x112
+
+b=2+8
+
+c=3+5
+
+int objects are preloaded in python
+==============================================================
+
+
+class classname:
+	attribute
+
+classname.attribute
+
+obj1= classname()
+obj2= className()
+obj3= className()
+
+...
+
+objN=className()
+classname---blueprint
+obj1, obj2, ...objN---- real buildings
+==================================================
+
+task
+====
+1.write a python program
+
+to create a class called Enrollment with attributes (name,dob)
+
+create emp1 obj and reassign name & dob of emp1
+
+create emp2 obj and reassign name & dob of emp2
+
+display emp1 details
+
+displat emp2 details
+
+=============================================================
+2.write a python program
+
+to create a class called filesys with attributes (fstype ="defaut-type")
+
+create 3 fs objects- fs1,fs2,fs3
+
+check the value of fstype of all objects fs1,fs2,fs3
+
+assign each object with different filesysytem type value.
+
+check the value of fstype of all objects fs1,fs2,fs3
+
+========================================================
+
+var=value      --->  class attribute
+
+function      ----> method
+
+syntax:-
+
+class className:
+
+	def methodName(self,<list of args>):
+		code block
+
+
+object=classNAme()
+object.methodName()  #  to methodNAme(object) implicit conversion 
+
+
+
+
+ class Enrollment:
+	name=""
+	dob=""
+
+	
+>>> emp1=Enrollment()
+>>> emp1.name="Theeba"   # obj.name
+>>> emp1.dob="2/22/1998"
+>>> emp2=Enrollment()
+>>> emp2.name="Vishnu"
+>>> emp2.dob="11/2/1988"
+>>> print("Emp Name :{}\t Emp DOB :{}".format(emp1.name,emp1.dob))
+Emp Name :Theeba	 Emp DOB :2/22/1998
+>>> print("Emp Name :{}\t Emp DOB :{}".format(emp2.name,emp2.dob))
+Emp Name :Vishnu	 Emp DOB :11/2/1988
+
+
+
+-----------------------
+method creation
+======
+1. Initialization of attribute
+2.  displaying 
+3. to modify dob   - "DOB 12/3/1988 modified
+ 
+
+class Enrollment:
+	name=""
+	dob=""
+	def f1(self,n,d):
+		print("Initializtion- step1")
+		self.name=n
+		self.dob=d
+	def f2(self):
+		print("Name:{}\t DateOfBirth:{}".format(self.name,self.dob))
+
+	def f3(self,a):
+		self.dob=a
+		print("DOB {} updated".format(a))
+
+>>> obj=Enrollment()
+>>> obj.f1("Theeba","22/2/1988")
+Initializtion- step1
+>>> obj2=Enrollment()
+>>> obj2.f1("Sam","1/2/1988")
+Initializtion- step1
+>>> obj.f2()
+Name:Theeba	 DateOfBirth:22/2/1988
+>>> obj2.f2()
+Name:Sam	 DateOfBirth:1/2/1988
+
+
+=======
+Constructor
+Syntax:-
+class classNae:
+
+	def __init__():
+		Initialization code
+
+>>> class Enrollment:
+	def __init__(self,n,d):
+		print("Initializtion- step1")
+		self.name=n
+		self.dob=d
+	def f2(self):
+		print("Name:{}\t DateOfBirth:{}".format(self.name,self.dob))
+	def f3(self,a):
+		self.dob=a
+		print("DOB {} updated".format(a))
+
+		
+>>> obj1= Enrollment("theeba","1/2/2909")
+>>> obj1.f2()
+
+===========================================================
+scope- private var for a class
+obj.__var
+===========================================
+
+file ab.py
+=======
+class box:
+
+	def f1(self):
+		..
+	def f2(self):
+		..
+
+file sab.py
+=======
+import ab
+
+class Fax(ab.box):
+	def fx(self):
+		..
+	def fy(self):
+		..
+file s1.py
+==========
+import sab
+obj= sab.Fax()
+obj.fx()
+obj.fy()
+obj.f1()
+obj.f2()
+========================================================================
+
+Vendor(vname,vid,vGST)---->   v1 , v2,.... vn
+
+V1
+|---- enroll - vname,vid,vgst
+|--- billing( productname,pcost,18% gst,total)
+		---------------------------
+
+		|-------------------------------------------file append operation
+
+Vendor V1  - P1  1000   180  1180
+
+Vendor V2   - P2  2000  280  2280
+--------------------------------------------// log file
+
+1. create a class vendor ( vname,vid,vgst)
+
+2. create constructor to intialize value for each vendor
+
+3. create a method for billing
+
+
+
+
+
+
+
